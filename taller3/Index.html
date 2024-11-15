@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Gestión Académica</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <!-- Menú Principal -->
+  <div class="menu">
+    <img src="images-removebg-preview.png" alt="Icono académico" class="menu-icon">
+    <ul>
+      <li><a href="#gestion-estudiantes">Gestión de Estudiantes</a></li>
+      <li><a href="#gestion-programas">Gestión de Programas Académicos</a></li>
+      <li><a href="#gestion-matriculas">Gestión de Matrículas</a></li>
+    </ul>
+  </div>
+
+  <!-- Sección de Gestión de Estudiantes -->
+  <section id="gestion-estudiantes" class="form-section">
+    <h2>Gestión de Estudiantes</h2>
+    <form id="form-estudiantes">
+      <label for="id-estudiante">ID Estudiante:</label>
+      <input type="text" id="id-estudiante" required>
+      
+      <label for="nombre-estudiante">Nombre Completo:</label>
+      <input type="text" id="nombre-estudiante" required pattern="[A-Za-z ]+">
+      
+      <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
+      <input type="date" id="fecha-nacimiento" required>
+      
+      <label for="email-estudiante">Correo Electrónico:</label>
+      <input type="email" id="email-estudiante" required>
+      
+      <label for="telefono-estudiante">Teléfono (Opcional):</label>
+      <input type="tel" id="telefono-estudiante" pattern="^\d{8,15}$">
+      
+      <button type="submit">Registrar Estudiante</button>
+    </form>
+  </section>
+
+  <!-- Sección de Gestión de Programas Académicos -->
+  <section id="gestion-programas" class="form-section">
+    <h2>Gestión de Programas Académicos</h2>
+    <form id="form-programas">
+      <label for="codigo-programa">Código del Programa:</label>
+      <input type="text" id="codigo-programa" required>
+      
+      <label for="nombre-programa">Nombre del Programa:</label>
+      <input type="text" id="nombre-programa" required>
+      
+      <label for="duracion-programa">Duración (en semestres):</label>
+      <input type="number" id="duracion-programa" min="1" required>
+      
+      <label for="modalidad-programa">Modalidad:</label>
+      <select id="modalidad-programa" required>
+        <option value="presencial">Presencial</option>
+        <option value="virtual">Virtual</option>
+        <option value="semipresencial">Semipresencial</option>
+      </select>
+      
+      <label for="fecha-inicio-programa">Fecha de Inicio:</label>
+      <input type="date" id="fecha-inicio-programa">
+      
+      <button type="submit">Registrar Programa</button>
+    </form>
+  </section>
+
+  <!-- Sección de Gestión de Matrículas -->
+  <section id="gestion-matriculas" class="form-section">
+    <h2>Gestión de Matrículas</h2>
+    <form id="form-matriculas">
+      <label for="id-matricula">ID Matrícula:</label>
+      <input type="text" id="id-matricula" required>
+      
+      <label for="id-estudiante-matricula">ID Estudiante:</label>
+      <input type="text" id="id-estudiante-matricula" required>
+      
+      <label for="codigo-programa-matricula">Código del Programa:</label>
+      <input type="text" id="codigo-programa-matricula" required>
+      
+      <label for="fecha-matricula">Fecha de Matrícula:</label>
+      <input type="date" id="fecha-matricula" required>
+      
+      <label for="estado-matricula">Estado de la Matrícula:</label>
+      <select id="estado-matricula" required>
+        <option value="activa">Activa</option>
+        <option value="en proceso">En proceso</option>
+        <option value="finalizada">Finalizada</option>
+        <option value="cancelada">Cancelada</option>
+      </select>
+      
+      <button type="submit">Registrar Matrícula</button>
+    </form>
+  </section>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
